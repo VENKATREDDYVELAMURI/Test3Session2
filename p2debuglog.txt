@@ -1,1 +1,139 @@
+ pwd
+/home/runner/Test3Session2-3
+ gcc -g p3final.c
+ ./a.out
+enter n and r value 
+534
+234    
+Floating point exception (core dumped)
+ 24
+bash: 24: command not found
+ gcc -g p3final.c
+ a./.out
+bash: a./.out: No such file or directory
+ gcc -g p3final.c
+ ./a.out
+enter n and r value 
+34
+24
+the ncr value for n= 34 , r= 24 is 0 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+ pwd
+/home/runner/Test3Session2-3
+ gcc -g p3final.c
+ ./a.out
+enter n and r value 
+34
+22
+the ncr value for n= 34 , r= 22 is 0 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x85f: file p3final.c, line 27.
+(gdb) l
+13      }
+14      return v;
+15  }
+16  int ncr(int n,int r)
+17  {
+18      int result;
+19      result=fact(n)/(fact(r)*fact(n-r));
+20      return result;
+21  }
+22  void output(int n,int r,int result)
+(gdb) r
+Starting program: /home/runner/Test3Session2-3/a.out 
+ pwd
+/home/runner/Test3Session2-3
+ gcc -g p2final.c
+ ./a.out
+enter num,den 
+ 78
+89
+enter num,den 
+ 56
+76
+enter num,den 
+ 87
+78
+the largest fraction among 78/89 , 56/76 and 87/78 is 87/78 gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8e3: file p2final.c, line 49.
+(gdb) l
+35          printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+36      }
+37      else if(f2.num==largest.num && f2.den==largest.den)
+38      {
+39           printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+40      }
+41      else
+42      {
+43           printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
+44      }
+(gdb) r
+Starting program: /home/runner/Test3Session2-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p2final.c:49
+49      f1=input_fraction();
+(gdb) n
+enter num,den 
+ s
+50      f2=input_fraction();
+(gdb) p
+The history is empty.
+(gdb) c
+Continuing.
+enter num,den 
+ enter num,den 
+
+Program received signal SIGFPE, Arithmetic exception.
+0x000055ead6400793 in Largest_fraction (f1=..., f2=..., 
+    f3=...) at p2final.c:15
+15      int f1num=(f1.num)/f1.den;
+(gdb) f
+#0  0x000055ead6400793 in Largest_fraction (f1=..., 
+    f2=..., f3=...) at p2final.c:15
+15      int f1num=(f1.num)/f1.den;
+(gdb) 
